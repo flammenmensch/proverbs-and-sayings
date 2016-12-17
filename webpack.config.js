@@ -3,12 +3,10 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
-  entry: {
-    'bundle': './client/js/index.js'
-  },
+  entry: [ 'babel-polyfill', './client/js/index.js' ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
