@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "PoluUstavRegular";
+  src: url("./assets/fonts/PoluUstavRegular.eot");
+  src: url("./assets/fonts/PoluUstavRegular.eot?#iefix") format("embedded-opentype"),
+  url("./assets/fonts/PoluUstavRegular.woff") format("woff"),
+  url("./assets/fonts/PoluUstavRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 25%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "PoluUstavRegular";
+  background-image: url(assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.proverb {
+  font-size: 6rem;
+  line-height: 0.6;
+  text-align: center;
+  color: #fefefe;
+  padding-bottom: 10vh;
+}
+
+.proverb:first-letter {
+  color: #ff0000;
+  font-size: 1.2em;
+}
+
+.next-btn {
+  color: white;
+  width: 150px;
+
+  border: none;
+  background: transparent;
+  position: absolute;
+
+  outline: none;
+
+  font-family: PoluUstavRegular;
+  font-size: 4rem;
+  font-weight: normal;
+
+  cursor: pointer;
+
+  bottom: 10vh;
+  left: calc(50% - 75px);
+
+  transition: all 0.2s linear;
+  opacity: 0.7;
+}
+
+.next-btn:hover {
+  opacity: 1.0;
+}
+
+.next-btn:active {
+  opacity: 0.8;
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .proverb {
+    font-size: 4rem;
+  }
+
+  .next-btn {
+    font-size: 3rem;
+  }
+}
