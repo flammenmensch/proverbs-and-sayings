@@ -5,7 +5,7 @@ export default function App({ proverb, onNext }) {
   return (
     <div className="app">
       <Proverb text={proverb} />
-      <button className="next-btns" onClick={onNext}>Далее</button>
+      <button className="next-btn" onClick={onNext}>Далее</button>
     </div>
   );
 }
