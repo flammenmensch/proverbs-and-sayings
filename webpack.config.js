@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
-  entry: [ 'babel-polyfill', './client/js/index.js' ],
+  entry: [ 'babel-polyfill', 'whatwg-fetch', './client/js/index.js' ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
