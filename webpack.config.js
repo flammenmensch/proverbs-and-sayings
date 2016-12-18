@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanupWebpackPlugin = require('webpack-cleanup-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   entry: [ 'babel-polyfill', 'whatwg-fetch', './client/js/index.js' ],
@@ -17,18 +19,18 @@ const config = {
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader?importLoaders=1!postcss-loader!sass-loader')
       },
       {
-        test: /\.(ttf|eot|woff|jpe?g|svg|png)$/,
+        test: /\.(ttf|eot|otf|woff|jpe?g|svg|png)$/,
         loader: 'url-loader'
       }
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { context: 'public', from: '**/*' }
-    ])
+    new CleanupWebpackPlugin(),
+    new ExtractTextWebpackPlugin('styles.css'),
+    new CopyWebpackPlugin([ { context: 'public', from: '**/*' } ])
   ]
 };
 

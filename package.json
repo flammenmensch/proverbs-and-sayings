@@ -17,6 +17,7 @@
     "url": "https://github.com/flammenmensch/proverbs-and-sayings.git"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.4",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.20.0",
@@ -24,12 +25,17 @@
     "babel-preset-react": "^6.16.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "node-sass": "^4.0.0",
+    "postcss": "^5.2.6",
+    "postcss-loader": "^1.2.1",
+    "postcss-normalize-url": "^3.0.7",
     "sass-loader": "^4.1.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
+    "webpack-cleanup-plugin": "^0.4.1",
     "whatwg-fetch": "^2.0.1"
   },
   "dependencies": {
