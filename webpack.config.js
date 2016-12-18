@@ -5,7 +5,7 @@ const CleanupWebpackPlugin = require('webpack-cleanup-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const config = {
-  entry: [ 'babel-polyfill', 'whatwg-fetch', './client/js/index.js' ],
+  entry: [ 'normalize.css', 'babel-polyfill', 'whatwg-fetch', './client/js/index.js' ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -18,7 +18,7 @@ const config = {
         loader: 'babel-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader?importLoaders=1!postcss-loader!sass-loader')
       },
       {
