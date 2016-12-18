@@ -7,16 +7,20 @@ export default class AppContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      proverb: ''
+      proverb: '',
+      loading: false
     }
   }
   componentDidMount() {
     this.__refresh();
   }
   render() {
-    return <App proverb={this.state.proverb} onNext={() => this.__refresh()} />;
+    return <App {...this.state} onNext={() => this.__refresh()} />;
   }
   __refresh() {
-    loadData().then(proverb => this.setState({ proverb }));
+    this.setState({ loading: true });
+    loadData()
+      .then(proverb => this.setState({ loading: false, proverb }))
+      .catch(() => this.setState({ loading: false }));
   }
 }

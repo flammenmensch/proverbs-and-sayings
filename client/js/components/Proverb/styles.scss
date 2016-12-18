@@ -1,0 +1,40 @@
+@import "../../_global/scss/media-queries";
+@import "../../_global/scss/mixins";
+
+.proverb {
+  @include PoluUstavRegular(5rem, 0.7);
+
+  text-align: center;
+  color: #fefefe;
+
+  &:first-letter {
+    color: #ff0000;
+    font-size: 1.2em;
+  }
+
+  &__medium {
+    font-size: 4rem;
+    line-height: 0.7;
+
+    @include large-screen {
+      font-size: 5rem;
+    }
+  }
+
+  &__long {
+    font-size: 3rem;
+    line-height: 0.85;
+
+    @include large-screen {
+      font-size: 4rem;
+    }
+  }
+
+  @include iphone6 {
+    font-size: 4rem;
+  }
+
+  @include large-screen {
+    font-size: 6rem;
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../_global/scss/media-queries";
+@import "../../_global/scss/mixins";
+
+.next-btn {
+  color: white;
+
+  width: 150px;
+
+  border: none;
+  background: transparent;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: all 0.2s linear;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1.0;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  @include PoluUstavRegular(3rem);
+  @include iphone6 {
+    font-size: 2rem;
+  }
+}
+
+

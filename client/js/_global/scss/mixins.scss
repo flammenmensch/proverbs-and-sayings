@@ -1,0 +1,6 @@
+@mixin PoluUstavRegular($size, $line-height:0.75) {
+  font-family: "PoluUstavRegular", monospace;
+  font-size: $size;
+  font-weight: normal;
+  line-height: $line-height;
+}

@@ -1,0 +1,40 @@
+$iphone6-min-width: 375px;
+$iphone6-max-width: 667px;
+$iphone6-pixel-ratio: 2;
+
+$ipad-min-width: 768px;
+$ipad-max-width: 1024px;
+$ipad-pixel-ratio: 2;
+
+@mixin device($min-width, $max-width, $pixel-ratio) {
+  @media only-screen
+    and (min-device-width: #{$min-width})
+    and (max-device-width: #{$max-width})
+    and (-webkit-min-device-pixel-ratio: #{$pixel-ratio}) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+  @media only screen and (max-width: 1023px) and (-webkit-max-device-pixel-ratio: 1) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media only screen and (min-width: 1024px) and (-webkit-max-device-pixel-ratio: 1) {
+    @content;
+  }
+}
+
+@mixin iphone6 {
+  @include device($iphone6-min-width, $iphone6-max-width, $iphone6-pixel-ratio) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @include device($ipad-min-width, $ipad-max-width, $ipad-pixel-ratio) {
+    @content;
+  }
+}
