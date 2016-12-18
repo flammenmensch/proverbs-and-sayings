@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build-dev --watch",
+    "start": "npm run build-dev -- --watch",
     "build-dev": "webpack --colors --progress",
     "build-prod": "NODE_ENV=production webpack --colors --progress",
     "serve": "node server/index.js",
