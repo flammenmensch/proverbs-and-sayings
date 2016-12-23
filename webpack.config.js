@@ -19,10 +19,12 @@ const config = {
       },
       {
         test: /\.s?css$/,
-        loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader?importLoaders=1!postcss-loader!sass-loader')
+        loader: ExtractTextWebpackPlugin.extract(
+          'style', 'css?importLoaders=1!postcss!sass'
+        ),
       },
       {
-        test: /\.(ttf|eot|otf|woff|jpe?g|svg|png)$/,
+        test: /\.(ttf|eot|otf|woff2?|jpe?g|svg|png)$/,
         loader: 'url-loader'
       }
     ]
